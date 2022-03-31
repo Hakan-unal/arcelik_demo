@@ -26,7 +26,7 @@ app.use(cors({ origin: true }));
 app.post("/authenticate", (req, res) => {
     const { code } = req.body;
     const data = new FormData();
-
+    let access_token;
     data.append("client_id", id);
     data.append("client_secret", secret);
     data.append("code", code);
@@ -39,8 +39,7 @@ app.post("/authenticate", (req, res) => {
         .then(async (response) => await response.text())
         .then((paramsString) => {
             let params = new URLSearchParams(paramsString);
-            const access_token = params.get("access_token");
-            console.log(access_token)
+            access_token = params.get("access_token");
 
             return fetch(`https://api.github.com/user`, {
                 headers: {
@@ -49,6 +48,17 @@ app.post("/authenticate", (req, res) => {
             });
         })
         .then((response) => response.json())
+        .then((response) => {
+            const url = "https://api.github.com/users/" + response.login + "/repos"
+            return fetch(url, {
+                headers: {
+                    Authorization: `token ${access_token}`,
+                },
+            });
+        })
+        .then((response) => {
+            return response.json()
+        })
         .then((response) => {
             return res.status(200).json(response);
         })
