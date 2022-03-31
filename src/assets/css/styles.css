@@ -1,0 +1,54 @@
+  .ant-modal-close{
+    top:20 !important;
+    color: red;
+  }
+
+  .buttonCreateHover:hover{
+    border-color: green;
+  }
+
+  .buttonDeleteHover:hover{
+    border-color: red;
+  }
+
+  .buttonOtelRoomEditHover:hover{
+    border-color: purple;
+  }
+
+  .buttonStatusHover:hover{
+    border-color: purple;
+  }
+
+  .buttonCopyHover:hover{
+    border-color: orange;
+  }
+
+  .ant-menu{
+    color:rgb(27, 81, 137) 
+  }
+
+  .text-center{
+    text-align: center;
+  }
+
+  .hdsDarkBlueColor{
+    color:rgb(27, 81, 137)
+  }
+
+  .ant-pagination-item a{
+    color: #1890ff !important
+  }
+
+
+  .cursorPointer{
+    cursor: pointer;
+  }
+
+
+  .site-page-header{
+    font-weight:100
+  }
+
+  
+
+  

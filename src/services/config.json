@@ -1,0 +1,6 @@
+{
+  "apiBase": "http://localhost:8080/",
+  "apiBaseClear": "http://localhost:8080/",
+  "webBase": "http://localhost:8080/"
+
+}
