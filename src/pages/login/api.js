@@ -4,7 +4,7 @@ import { publicApi } from '../../services/axios'
 
 
 export const getUserData = (code, payload) => {
-    return publicApi.post('http://localhost:8080/authenticate', payload)
+    return publicApi.post('https://arcelik-demo.vercel.app', payload)
         .then((response) => {
             return response.data;
         })
