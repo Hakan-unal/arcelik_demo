@@ -27,7 +27,10 @@ app.use(function (req, res, next) {
 
 
 app.post("/authenticate", (req, res) => {
-
+    res.header('Allow', 'GET, POST');
+    res.header('Access-Control-Allow-Headers', 'content-type, authorization, content-length, x-requested-with, accept, origin');
+    res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS')
+    res.header('Access-Control-Allow-Origin', '*');
 
     const { code } = req.body;
     const data = new FormData();
