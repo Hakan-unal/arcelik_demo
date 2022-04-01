@@ -26,7 +26,20 @@ app.use(function (req, res, next) {
 });
 
 app.get("/", (req, res) => {
-    res.send("GET TEST")
+    res.send("get TEST")
+
+})
+
+app.post("/", (req, res) => {
+    res.send("post TEST")
+
+})
+app.put("/", (req, res) => {
+    res.send("put TEST")
+
+})
+app.delete("/", (req, res) => {
+    res.send("delete TEST")
 
 })
 
@@ -77,7 +90,7 @@ app.post("/authenticate", (req, res) => {
         });
 });
 
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 443
 app.listen(port, () => {
     console.log("Listen port " + port)
 });
