@@ -28,40 +28,40 @@ app.use(function (req, res, next) {
 
 
 app.get("/authenticate", (req, res) => {
-    res.send("get 1 TEST")
+    return res.send("get 1 TEST")
 
 })
 
 app.post("/authenticate", (req, res) => {
-    res.send("post 1 TEST")
+    return res.send("post 1 TEST")
 
 })
 
 app.put("/authenticate", (req, res) => {
-    res.send("put 1 TEST")
+    return res.send("put 1 TEST")
 
 })
 
 app.delete("/authenticate", (req, res) => {
-    res.send("delete TEST")
+    return res.send("delete TEST")
 
 })
 
 app.get("/", (req, res) => {
-    res.send("get TEST")
+    return res.send("get TEST")
 
 })
 
 app.post("/", (req, res) => {
-    res.send("post TEST")
+    return res.send("post TEST")
 
 })
 app.put("/", (req, res) => {
-    res.send("put TEST")
+    return res.send("put TEST")
 
 })
 app.delete("/", (req, res) => {
-    res.send("delete TEST")
+    return res.send("delete TEST")
 
 })
 
