@@ -52,8 +52,7 @@ app.post("/authenticate", (req, res) => {
 
             return fetch(`https://api.github.com/user`, {
                 headers: {
-                    Authorization: `token ${access_token}`,
-                    "Content-Type": "text/html"
+                    Authorization: `token ${access_token}`
                 },
             });
         })
@@ -62,8 +61,7 @@ app.post("/authenticate", (req, res) => {
             const url = "https://api.github.com/users/" + response.login + "/repos"
             return fetch(url, {
                 headers: {
-                    Authorization: `token ${access_token}`,
-                    "Content-Type": "text/html"
+                    Authorization: `token ${access_token}`
                 },
             });
         })
