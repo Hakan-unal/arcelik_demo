@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Col, Form, Row, Spin, message, Table } from "antd";
-import { LoadingOutlined } from '@ant-design/icons';
-import { useHistory } from "react-router-dom";
+import { Col, Row, Table } from "antd";
 import { getUserData } from "./api"
-
+import SubTask from "./SubTask"
 
 
 
@@ -18,7 +16,8 @@ const Login = (props) => {
                 key: index,
                 name: data.name,
                 html_url: data.html_url,
-                topics: data.topics.map(topic => topic + " ")
+                topics: data.topics.map(topic => topic + " "),
+                description: data.description
             }
         })
         setRepos(tempArr)
@@ -69,7 +68,7 @@ const Login = (props) => {
         </Col>
         <Col sm={11}>
 
-            <Table size='small' dataSource={repos} columns={columns} />
+            <SubTask />
         </Col>
 
     </Row>

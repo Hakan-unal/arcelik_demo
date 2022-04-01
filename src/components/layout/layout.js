@@ -7,7 +7,7 @@ import { setInlineRedux } from "../../redux/promodex/actions";
 
 
 const InlineLayout = (props) => {
-    const { Content, Sider, Header } = Layout
+    const { Content } = Layout
 
     return (
         <div>

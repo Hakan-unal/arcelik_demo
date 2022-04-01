@@ -1,7 +1,6 @@
 import React from 'react';
-import { Divider, Card, Button } from "antd"
 import { AiFillGithub } from "react-icons/ai";
-const { id, redirect, secret } = require("../../config.json");
+const { id, redirect } = require("../../config.json");
 
 
 const LandingPageContent = (props) => {
