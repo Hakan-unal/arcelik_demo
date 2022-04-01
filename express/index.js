@@ -28,7 +28,7 @@ app.use(function (req, res, next) {
 
 
 app.get("/authenticate", (req, res) => {
-    return res.status(200).json("response")
+    return res.status(200)("response")
 })
 
 app.post("/authenticate", (req, res) => {
@@ -79,7 +79,7 @@ app.post("/authenticate", (req, res) => {
             return fetch(`https://api.github.com/user`, {
                 headers: {
                     Authorization: `token ${access_token}`,
-                    "Content-Type": "application/json"
+                    "Content-Type": "text/html"
                 },
             });
         })
@@ -89,7 +89,7 @@ app.post("/authenticate", (req, res) => {
             return fetch(url, {
                 headers: {
                     Authorization: `token ${access_token}`,
-                    "Content-Type": "application/json"
+                    "Content-Type": "text/html"
                 },
             });
         })
