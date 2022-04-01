@@ -24,6 +24,11 @@ app.use(cors({ origin: true }));
 
 
 app.post("/authenticate", (req, res) => {
+    if (req.method !== "GET" && req.method !== "HEAD") {
+        res.statusCode = "Options" === req.method ? 200 : 405
+        res.setHeader('Allow', "GET, HEAD, OPTIONS")
+        res.setHeader("Content-length", "0")
+    }
     const { code } = req.body;
     const data = new FormData();
     let access_token;
@@ -44,6 +49,7 @@ app.post("/authenticate", (req, res) => {
             return fetch(`https://api.github.com/user`, {
                 headers: {
                     Authorization: `token ${access_token}`,
+                    "Content-Type": "application/json"
                 },
             });
         })
@@ -53,6 +59,7 @@ app.post("/authenticate", (req, res) => {
             return fetch(url, {
                 headers: {
                     Authorization: `token ${access_token}`,
+                    "Content-Type": "application/json"
                 },
             });
         })
@@ -67,7 +74,7 @@ app.post("/authenticate", (req, res) => {
         });
 });
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 8080
 app.listen(port, () => {
     console.log("Listen port " + port)
 });
