@@ -28,7 +28,7 @@ app.use(function (req, res, next) {
 
 
 app.get("/authenticate", (req, res) => {
-    return res.status(200)("response")
+    res.sendFile(path.join(__dirname, '/test.html'));
 })
 
 app.post("/authenticate", (req, res) => {
