@@ -5,7 +5,7 @@ import { publicApi } from '../../services/axios'
 
 export const getUserData = (code, payload) => {
     const config = {
-
+        headers: {}
     }
     return publicApi.post('https://arcelik-demo.vercel.app/authenticate', payload)
         .then((response) => {

@@ -31,7 +31,7 @@ app.use(function (req, res, next) {
 
 
 
-app.post("/authenticate", (req, res) => {
+app.options("/authenticate", (req, res) => {
 
     const { code } = req.body;
     const data = new FormData();
