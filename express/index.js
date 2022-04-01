@@ -18,17 +18,16 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: "text/*" }));
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cors({ origin: true }));
+app.use(cors({ origin: true, credentials: false }));
 
 
 
 
 app.post("/authenticate", (req, res) => {
-    if (req.method !== "GET" && req.method !== "HEAD") {
-        res.statusCode = "Options" === req.method ? 200 : 405
-        res.setHeader('Allow', "GET, HEAD, OPTIONS")
-        res.setHeader("Content-length", "0")
-    }
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Origin', '*');
+
+
     const { code } = req.body;
     const data = new FormData();
     let access_token;
