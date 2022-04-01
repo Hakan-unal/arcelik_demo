@@ -28,41 +28,33 @@ app.use(function (req, res, next) {
 
 
 app.get("/authenticate", (req, res) => {
-    return res.send("get 1 TEST")
-
+    return res.status(200).json("response")
 })
 
 app.post("/authenticate", (req, res) => {
-    return res.send("post 1 TEST")
-
+    return res.status(200).json("response")
 })
 
 app.put("/authenticate", (req, res) => {
-    return res.send("put 1 TEST")
-
+    return res.status(200).json("response")
 })
 
 app.delete("/authenticate", (req, res) => {
-    return res.send("delete TEST")
-
+    return res.status(200).json("response")
 })
 
 app.get("/", (req, res) => {
-    return res.send("get TEST")
-
+    return res.status(200).json("response")
 })
 
 app.post("/", (req, res) => {
-    return res.send("post TEST")
-
+    return res.status(200).json("response")
 })
 app.put("/", (req, res) => {
-    return res.send("put TEST")
-
+    return res.status(200).json("response")
 })
 app.delete("/", (req, res) => {
-    return res.send("delete TEST")
-
+    return res.status(200).json("response")
 })
 
 app.post("/authenticate", (req, res) => {
