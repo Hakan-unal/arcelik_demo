@@ -4,7 +4,6 @@ const FormData = require("form-data");
 const bodyParser = require("body-parser");
 var cors = require('cors');
 const fetch = require("node-fetch");
-const { application } = require("express");
 
 
 const app = express();
@@ -31,7 +30,9 @@ app.use(function (req, res, next) {
 
 
 app.get("/test", (req, res) => {
-    res.send("Hello World")
+    res.setHeader('Content-Type', 'text/html');
+    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
+    res.end(`Hello! Go to item: <a href="${path}">${path}</a>`);
 })
 
 app.post("/authenticate", (req, res) => {
