@@ -13,7 +13,7 @@ app.use(express.json())
 
 
 app.use(bodyParser.json());
-app.use(bodyParser.json({ type: "text/html" }));
+app.use(bodyParser.json({ type: "text/*" }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors({ origin: true }));
 
