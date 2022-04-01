@@ -30,6 +30,11 @@ app.get("/", (req, res) => {
 
 })
 
+app.get("/authenticate", (req, res) => {
+    res.send("get 1 TEST")
+
+})
+
 app.post("/", (req, res) => {
     res.send("post TEST")
 
