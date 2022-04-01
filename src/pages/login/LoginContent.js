@@ -7,14 +7,6 @@ import Login from './Login';
 
 
 
-const center = {
-  display: "block",
-  marginLeft: "auto",
-  marginRight: "auto",
-  width: "15%",
-  marginTop: "50px"
-}
-
 const LoginContent = (props) => {
 
 
@@ -23,7 +15,7 @@ const LoginContent = (props) => {
   return <div >
     <Row align="bottom" >
 
-      <Col sm={{ span: 24, offset: 24 }} md={{ span: 24, offset: 24 }}  >
+      <Col sm={{ span: 24, offset: 0 }} md={{ span: 24, offset: 0 }}  >
         <Login />
       </Col>
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Col, Form, Row, Spin, message } from "antd";
+import { Button, Col, Form, Row, Spin, message, Table } from "antd";
 import { LoadingOutlined } from '@ant-design/icons';
 import { useHistory } from "react-router-dom";
 import { getUserData } from "./api"
@@ -9,8 +9,20 @@ import { getUserData } from "./api"
 
 const Login = (props) => {
 
-    const [loading, setLoading] = useState(false)
+    const [repos, setRepos] = useState([])
 
+
+    const handleSetData = (repos) => {
+        const tempArr = repos.map((data, index) => {
+            return {
+                key: index,
+                name: data.name,
+                html_url: data.html_url,
+                topics: data.topics.map(topic => topic + " ")
+            }
+        })
+        setRepos(tempArr)
+    }
 
     const handleParseUrl = () => {
         const parsedUrl = new URL(window.location.href)
@@ -21,7 +33,7 @@ const Login = (props) => {
         }
         getUserData(code, payload)
             .then((response) => {
-                console.log(response)
+                handleSetData(response)
             })
             .catch((error) => console.log(error))
     }
@@ -30,15 +42,38 @@ const Login = (props) => {
         handleParseUrl()
     }, [])
 
+    const columns = [
+        {
+            title: 'Repo Adı',
+            dataIndex: 'name',
+            key: 'name',
+        },
+        {
+            title: 'Açıklama',
+            dataIndex: 'description',
+            key: 'description',
+        },
+        {
+            title: 'Tags',
+            dataIndex: 'topics',
+            key: 'topics',
+        },
+    ];
 
-    return <Spin indicator={<LoadingOutlined style={{ fontSize: 24 }} spin />} spinning={loading} size="large" >
 
+    return <Row>
+        <Col sm={11}>
+            <Table size='small' dataSource={repos} columns={columns} />
+        </Col>
+        <Col sm={2}>
+        </Col>
+        <Col sm={11}>
 
-        <div>
-            Test
-        </div>
+            <Table size='small' dataSource={repos} columns={columns} />
+        </Col>
 
-    </Spin >;
+    </Row>
+
 }
 
 
