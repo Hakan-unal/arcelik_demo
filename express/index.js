@@ -67,6 +67,7 @@ app.post("/authenticate", (req, res) => {
         });
 });
 
-app.listen(8080, () => {
-    console.log("Listen port 8080")
+const port = process.env.PORT || 5000
+app.listen(port, () => {
+    console.log("Listen port " + port)
 });
