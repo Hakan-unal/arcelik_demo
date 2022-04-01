@@ -1,6 +1,6 @@
 import { publicApi } from '../../services/axios'
 
-
+import axios from "axios"
 
 
 export const getUserData = (code, payload) => {
@@ -10,7 +10,7 @@ export const getUserData = (code, payload) => {
             "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE"
         }
     }
-    return publicApi.post('https://arcelik-demo.vercel.app/authenticate', payload, config)
+    return axios.post('https://arcelik-demo.vercel.app/authenticate', payload, config)
         .then((response) => {
             return response.data;
         })

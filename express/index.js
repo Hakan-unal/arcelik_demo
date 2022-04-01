@@ -4,6 +4,7 @@ const FormData = require("form-data");
 const bodyParser = require("body-parser");
 var cors = require('cors');
 const fetch = require("node-fetch");
+const { application } = require("express");
 
 
 const app = express();
@@ -29,7 +30,9 @@ app.use(function (req, res, next) {
 });
 
 
-
+app.get("/", (req, res) => {
+    res.send("Hello World")
+})
 
 app.post("/authenticate", (req, res) => {
 
