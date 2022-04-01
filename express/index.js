@@ -30,7 +30,7 @@ app.use(function (req, res, next) {
 });
 
 
-app.get("/", (req, res) => {
+app.get("/test", (req, res) => {
     res.send("Hello World")
 })
 
