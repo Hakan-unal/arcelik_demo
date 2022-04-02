@@ -10,7 +10,7 @@ export const getUserData = (code, payload) => {
             "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE"
         }
     }
-    return axios.post('https://arcelik-be.vercel.app//authenticate', payload, config)
+    return axios.post('https://arcelik-be.vercel.app/authenticate', payload, config)
         .then((response) => {
             return response.data;
         })
