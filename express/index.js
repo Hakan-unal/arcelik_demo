@@ -31,7 +31,19 @@ app.use(cors({ origin: true }));
 app.get("/test", (req, res) => {
     res.setHeader('Content-Type', 'text/html');
     res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
-    res.json({ message: "Hello world wORLD" });
+    res.json({ message: "Hello world" });
+})
+
+app.get("/", (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
+    res.json({ message: "Hello world" });
+})
+
+app.post("/test", (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate');
+    res.json({ message: "Post" });
 })
 
 app.post("/authenticate", (req, res) => {
