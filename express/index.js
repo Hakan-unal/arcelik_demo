@@ -2,7 +2,6 @@ const express = require("express");
 const { id, redirect, secret } = require("./config");
 const FormData = require("form-data");
 const bodyParser = require("body-parser");
-var cors = require('cors');
 const fetch = require("node-fetch");
 
 
@@ -21,7 +20,6 @@ app.use(express.json())
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: "text/*" }));
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cors({ origin: true }));
 
 app.use((req, res, next) => {
 
