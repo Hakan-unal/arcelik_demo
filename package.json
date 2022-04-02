@@ -2,7 +2,7 @@
   "name": "arcelik",
   "version": "0.0.1",
   "private": true,
-  "proxy": "https://arcelik-demo-six.vercel.app/",
+  "proxy": "https://arcelik-demo-six.vercel.app",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@ant-design/icons-svg": "^4.2.1",
