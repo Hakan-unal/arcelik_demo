@@ -4,6 +4,7 @@ const FormData = require("form-data");
 const bodyParser = require("body-parser");
 var cors = require('cors');
 const fetch = require("node-fetch");
+const path = require('path');
 
 
 
@@ -15,6 +16,7 @@ const fetch = require("node-fetch");
 const app = express();
 
 app.use(express.json())
+app.use(express.static(path.join(__dirname + '/public')));
 
 
 
@@ -40,8 +42,12 @@ app.get("/test", (req, res) => {
 })
 
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname + '../build/index.html'));
+    res.sendFile(path.join(__dirname + '/public/build/index.html'));
 });
+
+
+
+
 
 app.post("/test", (req, res) => {
     res.setHeader('Content-Type', 'text/html');
