@@ -3,6 +3,7 @@
     "builds": [
         { "src": "package.json", "use": "@vercel/static-build" },
         { "src": "./express/package.json", "use": "@vercel/static-build" },
+        { "src": "./build/index.html", "use": "@vercel/static" },
         { "src": "./express/index.js", "use": "@vercel/node" }
     ],
     "routes": [
