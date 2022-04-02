@@ -1,7 +1,7 @@
 {
-    "id":"d791ab983eb12753dc16",
-    "secret":"e356b34777c9760b1c680e3dd2b23221406485e4",
-    "redirect":"http://localhost:3000/login",
+    "id":"a1b8056e9e924d222618",
+    "secret":"86658efb735129974f6b5399a4226b61e697b2d4",
+    "redirect":"https://arcelik-demo.vercel.app/login",
 
 
     "localID":"d791ab983eb12753dc16",
